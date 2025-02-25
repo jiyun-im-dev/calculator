@@ -2,10 +2,10 @@ package com.jiyun.calculator;
 
 public class Calculator {
 
-    private double flag = Double.MIN_VALUE;
+    private static final double FLAG = Double.MIN_VALUE;
 
-    public double getFlag() {
-        return flag;
+    public static double getFlag() {
+        return FLAG;
     }
 
     public double calculate(int a, int b, char operator) {
@@ -26,7 +26,7 @@ public class Calculator {
         } catch (ArithmeticException e) {
             System.out.println(e.getMessage());
         }
-        return flag;
+        return FLAG;
     }
 
 }

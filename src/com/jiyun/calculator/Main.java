@@ -19,7 +19,7 @@ public class Main {
             char operator = inputHandler.getOperator();
 
             double result = calculator.calculate(a, b, operator);
-            if (result != calculator.getFlag()) {
+            if (result != Calculator.getFlag()) {
                 System.out.println("결과는 " + result + "입니다.");
             }
 
