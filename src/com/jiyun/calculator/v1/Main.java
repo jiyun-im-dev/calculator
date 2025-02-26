@@ -1,4 +1,4 @@
-package com.jiyun.calculator;
+package com.jiyun.calculator.v1;
 
 import java.util.Scanner;
 
