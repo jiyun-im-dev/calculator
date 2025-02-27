@@ -2,7 +2,6 @@ package com.jiyun.calculator.v2;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
-import java.util.stream.Collectors;
 
 public class InputHandlerV2 {
 
