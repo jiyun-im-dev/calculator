@@ -34,9 +34,17 @@ public class CalculatorV2 {
 
     public void printResults() {
         for (Number v : results) {
-            System.out.print(v + " ");
+            System.out.print(formatResult(v) + " ");
         }
         System.out.println();
+    }
+
+    public static Number formatResult(Number num) {
+        if (num.doubleValue() == num.longValue()) {
+            return num.longValue();
+        } else {
+            return num.doubleValue();
+        }
     }
 
     public <T extends Number> T calculate(T a, T b, Opeartor operator) {
