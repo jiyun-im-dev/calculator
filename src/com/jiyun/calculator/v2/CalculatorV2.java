@@ -1,11 +1,43 @@
 /*
  * 계산기 v2
- * 도전 과제
+ * 도전 기능
  */
 
 package com.jiyun.calculator.v2;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CalculatorV2 {
+
+    private static final List<Number> results = new ArrayList<>();
+
+    public List<Number> getResults() {
+        return results;
+    }
+
+    public void setResults(int index, Number value) {
+        results.set(index, value);
+    }
+
+    public void addResult(Number value) {
+        results.add(value);
+    }
+
+    public void removeFirstResult() {
+        try {
+            results.remove(0);
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("삭제할 항목이 없습니다.");
+        }
+    }
+
+    public void printResults() {
+        for (Number v : results) {
+            System.out.print(v + " ");
+        }
+        System.out.println();
+    }
 
     public <T extends Number> T calculate(T a, T b, Opeartor operator) {
         try {
