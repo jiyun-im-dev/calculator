@@ -1,11 +1,36 @@
 package com.jiyun.calculator.v1;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Calculator {
 
     private static final double FLAG = Double.MIN_VALUE;
 
+    private final List<Double> results = new ArrayList<>();
+
     public static double getFlag() {
         return FLAG;
+    }
+
+    public List<Double> getResults() {
+        return results;
+    }
+
+    public void setResults(int index, double value) {
+        results.set(index, value);
+    }
+
+    public void addResult(double value) {
+        results.add(value);
+    }
+
+    public void removeFirstResult() {
+        try {
+            results.remove(0);
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("삭제할 항목이 없습니다.");
+        }
     }
 
     public double calculate(int a, int b, char operator) {

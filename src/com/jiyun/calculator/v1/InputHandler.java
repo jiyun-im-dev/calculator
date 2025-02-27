@@ -7,8 +7,11 @@ public class InputHandler {
 
     private final Scanner scanner;
 
-    public InputHandler(Scanner scanner) {
+    private final Calculator calculator;
+
+    public InputHandler(Scanner scanner, Calculator calculator) {
         this.scanner = scanner;
+        this.calculator = calculator;
     }
 
     public int getPositiveInteger() {
@@ -44,11 +47,37 @@ public class InputHandler {
     }
 
     public void exitIfRequested() {
-        scanner.nextLine(); // 스캐너를 다음 줄로 이동
         String input = scanner.nextLine();
         if (input.equals("exit")) {
             System.out.println("프로그램을 종료합니다.");
             System.exit(0);
+        }
+    }
+
+    public void removeResultIfRequested() {
+        String input = scanner.nextLine();
+        if (input.equals("Y")) {
+            calculator.removeFirstResult();
+        }
+    }
+
+    public void chooseMenu() {
+        scanner.nextLine(); // Scanner 버퍼 비우기
+        while (true) {
+            System.out.println("실행할 항목을 입력하세요. (1=계속 계산, 2=첫번째 결과 지우기, exit=프로그램 종료)");
+            String input = scanner.nextLine();
+            switch (input) {
+                case "1":
+                    return;
+                case "2":
+                    calculator.removeFirstResult();
+                    break;
+                case "exit":
+                    System.out.println("프로그램을 종료합니다.");
+                    System.exit(0);
+                default:
+                    System.out.println("다시 입력해주세요.");
+            }
         }
     }
 
