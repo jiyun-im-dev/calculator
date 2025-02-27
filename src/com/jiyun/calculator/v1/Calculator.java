@@ -33,6 +33,13 @@ public class Calculator {
         }
     }
 
+    public void printResults() {
+        for (Double v : results) {
+            System.out.print(v + " ");
+        }
+        System.out.println();
+    }
+
     public double calculate(int a, int b, char operator) {
         try {
             switch (operator) {

@@ -1,5 +1,6 @@
 package com.jiyun.calculator.v1;
 
+import java.awt.print.Printable;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -71,6 +72,8 @@ public class InputHandler {
                     return;
                 case "2":
                     calculator.removeFirstResult();
+                    System.out.print("첫번째 결과를 지웠습니다. 현재 결과 리스트: ");
+                    calculator.printResults();
                     break;
                 case "exit":
                     System.out.println("프로그램을 종료합니다.");

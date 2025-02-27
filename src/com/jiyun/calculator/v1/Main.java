@@ -1,6 +1,5 @@
 package com.jiyun.calculator.v1;
 
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -26,19 +25,9 @@ public class Main {
             }
 
             System.out.print("결과값 리스트: ");
-            List<Double> results = calculator.getResults();
-            for (Double v : results) {
-                System.out.print(v + " ");
-            }
-            System.out.println();
+            calculator.printResults();
 
             inputHandler.chooseMenu();
-
-//            System.out.println("첫번째 결과를 지울까요? (Y/N)");
-//            inputHandler.removeResultIfRequested();
-//
-//            System.out.println("프로그램을 계속 실행할까요? (exit 입력 시 종료)");
-//            inputHandler.exitIfRequested();
         }
 
     }
