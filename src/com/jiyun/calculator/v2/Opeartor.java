@@ -19,7 +19,7 @@ public enum Opeartor {
         return symbol;
     }
 
-    // 입력받은 글자가 사칙연산 기호인지 확인
+    // 입력받은 글자가 사칙 연산 기호인지 확인
     public static boolean isOperator(char symbol) {
         for (Opeartor opeartor : Opeartor.values()) {
             if (opeartor.getSymbol() == symbol) {
@@ -29,8 +29,8 @@ public enum Opeartor {
         return false;
     }
 
-    // Operator(ex. ADD)를 리턴
-    public static Opeartor getOperator(char symbol) {
+    // 연산 기호에 해당하는 Operator(ex. ADD)를 리턴
+    public static Opeartor getOperatorBySymbol(char symbol) {
         for (Opeartor opeartor : Opeartor.values()) {
             if (opeartor.getSymbol() == symbol) {
                 return opeartor;

@@ -37,7 +37,7 @@ public class InputHandlerV2 {
             try {
                 char input = scanner.next().charAt(0);
                 if (Opeartor.isOperator(input)) {
-                    return Opeartor.getOperator(input);
+                    return Opeartor.getOperatorBySymbol(input);
                 } else {
                     throw new IllegalArgumentException("사칙연산 기호를 입력해야 합니다.");
                 }

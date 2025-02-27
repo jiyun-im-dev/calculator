@@ -24,7 +24,7 @@ public class CalculatorV2 {
         results.add(value);
     }
 
-    // 결괏값 리스트에서 첫 번째 항목을 삭제한다.
+    // 결괏값 리스트에서 첫 번째 항목을 삭제
     public void removeFirstResult() {
         try {
             results.remove(0);
@@ -40,7 +40,7 @@ public class CalculatorV2 {
         System.out.println();
     }
 
-    // 소수점 아래가 없는 경우 정수 형태로 바꿔서 반환한다.
+    // 소수점 아래가 없는 경우 정수 형태로 바꿔서 반환
     public static Number formatResult(Number num) {
         if (num.doubleValue() == num.longValue()) {
             return num.longValue();
@@ -49,7 +49,7 @@ public class CalculatorV2 {
         }
     }
 
-    // Operator enum 타입을 이용하여 계산을 수행한다
+    // Operator enum 타입을 이용하여 계산을 수행
     public <T extends Number> T calculate(T a, T b, Opeartor operator) {
         try {
             switch (operator) {
